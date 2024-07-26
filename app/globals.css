@@ -2,32 +2,105 @@
 @tailwind components;
 @tailwind utilities;
 
+body , 
+html ,
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  height: 100%;
+  box-sizing: border-box;
+  direction: rtl;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.gradient-box {
+  background-color: #222222;
+  background-image: linear-gradient(43deg, #222222 0%, #5d0060 64%); 
+}
+.gradient-boxx {
+  background-color: #222222;
+  background-image: linear-gradient(43deg, #222222 0%, #5d0060 64%); 
+  opacity: 90%;
+}
+
+.directionn {
+  direction: rtl;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+.nav-link {
+  font-size: 1.02rem;
+  color: var(--text-alter-color);
+  font-family: var(--poppins-font);
+  transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.nav-link:hover {
+  color: var(--bg-color);
+  transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* menu icon */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 5px;
+  cursor: pointer;
+  z-index: 999;
+  transform: 0.3s;
+}
+.menu-icon div {
+  display: block;
+  background: black;
+  height: 2px;
+  width: 23px;
+  transition: 0.3s;
+}
+.move .line1 {
+  transform: rotate(-45deg) translate(-5px,5px);
+}
+.move .line2 {
+  opacity: 0;
+}
+.move .line3 {
+  transform: rotate(45deg) translate(-5px,-5px);
+}
+
+@media (max-width : 700px) {
+  header {
+      top : 15px;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .nav {
+      padding: 10px 20px;
+  }
+  .logo {
+      width: 35px;
+  }
+  .menu-icon {display: flex;}
+  .navbar {
+      position: absolute;
+      top: 110%;
+      left: 50%;
+      transform: translate(-50%);
+      width: 90vw;
+      background: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border-radius: 1rem;
+      clip-path: polygon(0 0 , 100% 0,100% 0 , 0 0);
+      transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .open-menu {
+      clip-path: polygon(0 0 , 100% 0,100% 100% , 0 100%);
+      transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .nav-link {
+      display: block;
+      margin: 1rem;
   }
 }
