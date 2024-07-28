@@ -13,7 +13,7 @@ const Page = async () => {
         }
     });
 
-    const formattedorders: OrderColumn[] = orders.map((item) => ({
+    const formattedorders: any = orders.map((item) => ({
         id: item.id,
         label: item.name,
         number : item.number,
