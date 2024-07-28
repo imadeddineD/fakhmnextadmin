@@ -7,17 +7,17 @@ export type OrderColumn = {
   id: string
   label: string
   createdAt: string
-  email : string
+  number : number
 }
 
 export const columns: ColumnDef<OrderColumn>[] = [
   {
     accessorKey: "label",
-    header: "العنوان",
+    header: "إسم",
   },
   {
-    accessorKey: "email",
-    header: "البريد الإلكتروني",
+    accessorKey: "number",
+    header: "رقم الهاتف",
   },
   {
     accessorKey: "createdAt",

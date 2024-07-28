@@ -38,10 +38,10 @@ export const HomeClient
                     title={`الصفحة الرئيسية`}
                     description="إدارة الصفحة الرئيسية الخاصة بك لمتجرك"
                 />
-                <Button size={isMobile ? "icon" : "default"} onClick={() => router.push(`/dashboard/home/new`)} className=" bg-[#5d0060]">
+                {data.length > 0 ? "" : <Button size={isMobile ? "icon" : "default"} onClick={() => router.push(`/dashboard/home/new`)} className=" bg-[#5d0060]">
                     {isMobile ? (<Plus className="h-4 w-4" />) : (<Plus className="mr-2 h-4 w-4" />)}
                     {!isMobile && "أضف الجديد"}
-                </Button>
+                </Button>}
             </div>
             <Separator />
             <DataTable columns={columns} data={data} searchKey="label" />

@@ -88,15 +88,14 @@ export async function DELETE (
             return new NextResponse("about ID is required", { status: 400 });
         }
 
-       
 
-        const about = await db.about.deleteMany({
-            where: {
-                id: params.aboutId,
-            },
-        });
+        // const about = await db.about.deleteMany({
+        //     where: {
+        //         id: params.aboutId,
+        //     },
+        // });
         
-        return NextResponse.json(about);
+        return NextResponse.json("You can't delete it");
     } catch (error) {
         console.log('[ABOUT_DELETE]', error);
         return new NextResponse("Internal error", { status: 500 });

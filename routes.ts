@@ -3,7 +3,7 @@
  * These routes do not require authentication
  * @type {string[]}
  */
-export const publicRoutes = ["/",];
+export const publicRoutes = ["/", "/api/home" , "/api/about" , "/api/order" , "/api/products" , "/api/categories"];
 
 /**
  * An array of routes that are used for authentication
@@ -13,7 +13,7 @@ export const publicRoutes = ["/",];
 export const authRoutes = [
   "/auth/login",
   "/auth/register",
-];
+]; 
 
 /**
  * The prefix for API authentication routes

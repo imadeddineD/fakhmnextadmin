@@ -64,7 +64,7 @@ model Product {
 model Order {
   id            String    @id @default(cuid()) @map("_id")
   name          String
-  email         String   
+  number        String   
   message       String
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt

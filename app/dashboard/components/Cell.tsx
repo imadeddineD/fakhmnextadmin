@@ -60,11 +60,10 @@ export const CellAction: React.FC<CellActionProps> = ({
                     {/* <DropdownMenuItem onClick={() => onCopy(data.id)}>
                         <Copy className="mr-2 h-4 w-4" />
                         نسخ id
-                    </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => router.push(`/dashboard/home/${data.id}`)}>
+                    </DropdownMenuItem>*/}
+                    <DropdownMenuItem onClick={() => router.push(`/dashboard/${data.id}`)}>
                         <Edit className="mr-2 h-4 w-4" />
-                        تجديد
-                    </DropdownMenuItem> */}
+                        تفاصيل الطلب                    </DropdownMenuItem> 
                     <DropdownMenuItem onClick={() => setOpen(true)} className="!text-red-500">
                         <Trash className="mr-2 h-4 w-4" />
                         حذف
