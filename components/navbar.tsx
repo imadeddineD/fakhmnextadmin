@@ -5,6 +5,11 @@ import logo from "../public/logo.png"
 import Image from "next/image";
 import StoreSwitcher from "./storeswitcher";
 import { MainNav } from "./MainNav";
+import { IoMdNotificationsOutline } from "react-icons/io";
+import { db } from "@/lib/db";
+import { format } from "path";
+import Notifications from "./Notifications";
+
 
 
 const Navbar = async () => {
@@ -14,6 +19,14 @@ const Navbar = async () => {
         redirect("/auth/login");
     }
 
+    const notifications = await db.notification.findMany({
+        where: {
+            status: 'unread',
+        },
+        orderBy: {
+            createdAt: 'desc',
+        },
+    });
     
 
     return (
@@ -23,6 +36,7 @@ const Navbar = async () => {
                 <div className=" w-[60px]">
                     <Image src={logo} width={60} height={40} alt="logo"/>
                 </div>
+                <Notifications/>
                 <MainNav/>
                 <div >
                 

@@ -3,8 +3,6 @@ import Navbar from "@/components/navbar";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 
-
-
 export default async function  DashboardLayout({
     children,
     params
@@ -17,9 +15,6 @@ export default async function  DashboardLayout({
     if (!user) {
         redirect('auth/login');
     }
-
-    
-    
 
     return (
         <>
